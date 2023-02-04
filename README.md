@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# Aplicação galeria de fotos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trata-se de uma aplicação que pega as fotos que estão no firebase e mostra em formato de
+card. Também é possível adicionar um novo arquivo de foto no firebase através da aplicação.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Instalação desta Aplicação
+### `npm install`
 
+## Para rodar a aplicação
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Configurando o firebase
+passo 1: Acesse o firebase com login de uma conta Google
+         No menu superior clique em 'Ir para o console'.
 
-### `npm test`
+passo 2: Crie um projeto e o nomeie ex: 'reactGallery123'
+         Ativar o analytics é opcional, clique em 'criar projeto'.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+passo 3: Continuando... Escolha a opção 'web' em 'Adicione um app para começar'.
 
-### `npm run build`
+passo 4: Criando um app dentro do projeto no firebase:
+         Escolha um nome para registrar o app, ex: 'reactGallery123'.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+passo 5: Clique em registrar app, será gerado uma serie de códigos atrelada ao que já
+         criamos anteriormente. Copie o trecho que contém o seguinte código:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+         `const firebaseConfig = {
+            apiKey: "",
+            authDomain: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: ""
+        };`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+passo 6: Ir em 'src/libs/firebase.ts' desta aplicação React e substitua a const firebaseConfig = {},
+         pela gerada no seu firebase.
 
-### `npm run eject`
+passo 7: No firebase clique em 'continuar no console'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+passo 8: No menu lateral do firebase clique em 'storage', clique em 'primeiros passos',
+         clique em 'próxima', clique em 'concluir'.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+passo 9: No menu superior clique em 'rules', 'editar regras', na linha 5 do código mostrado,
+         altere as regras, então a linha 5 deverá ficar assim: 'allow read, write;'.
+         Obs: Nota que permitiremos leitura e escrita, em uma aplicação que ficará 
+         no ar não deverá alterar este trecho.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+passo 10: no menu superior clique em 'files', clie uma pasta chamada 'images', clicando
+        ao lado de '...'.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Abra [http://localhost:3000] no seu navegador.
