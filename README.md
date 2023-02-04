@@ -35,7 +35,8 @@ passo 5: Clique em registrar app, será gerado uma serie de códigos atrelada ao
             appId: ""
         };`
 
-passo 6: Ir em 'src/libs/firebase.ts' desta aplicação React e substitua a const firebaseConfig = {},
+passo 6: Ir em 'src/libs/firebase.ts' desta aplicação React e substitua a 
+`const firebaseConfig = {}`,
          pela gerada no seu firebase.
 
 passo 7: No firebase clique em 'continuar no console'
