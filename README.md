@@ -35,9 +35,11 @@ passo 5: Clique em registrar app, será gerado uma serie de códigos atrelada ao
             appId: ""
         };`
 
-passo 6: Ir em 'src/libs/firebase.ts' desta aplicação React e substitua a 
-`const firebaseConfig = {}`,
-         pela gerada no seu firebase.
+passo 6: Altere o arquivo '.env.example' com os valores atribuidos pelo firebase 
+        ao objeto 'firebaseConfig', observe que as variaveis de ambiente nao deveram possuir
+        'aspas' ex: REACT_API_FIREBASE_APIKEY=XXXXXXXXXXXXXXXXXXXXX. 
+        Renomeie o arquivo '.env.example' para '.env'.
+        Este passo pode também ser realizado depois do passo a passo das configurações do firebase.
 
 passo 7: No firebase clique em 'continuar no console'
 
@@ -49,7 +51,8 @@ passo 9: No menu superior clique em 'rules', 'editar regras', na linha 5 do cód
          Obs: Nota que permitiremos leitura e escrita, em uma aplicação que ficará 
          no ar não deverá alterar este trecho.
 
-passo 10: no menu superior clique em 'files', clie uma pasta chamada 'images', clicando
-        ao lado de '...'.
+passo 10: no menu superior clique em 'files', crie uma pasta chamada 'images', clicando
+        ao lado de '...'. Se o nome da pasta não for 'images', deve não funcionar porque faz
+        referência no código.
 
 Abra [http://localhost:3000] no seu navegador.
